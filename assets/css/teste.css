@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0;
+    transition: all 0.2s;
+    transition: width none;
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
+
+body {
+    font-size: 50%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    max-width: 0.4rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: /*Escolha uma cor*/;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: /*Escolha uma cor*/;
+    border-radius: .4rem;
+}
+
+:root {
+    /* Coloque suas variaveis aqui, como cores, estilos de bordas padrões, etc... */
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+i,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+/* ================================================================ */
+
+/* HEADER-SECTION */
+/* Aqui você coloca os estilos pertencentes ao header e seus filhos */
+
+/* ================================================================ */
+
+/* MAIN-SECTION */
+/* Aqui você coloca os estilos pertencentes ao main e seus filhos */
+
+/* ================================================================ */
+
+/* FOOTER-SECTION */
+/* Aqui você coloca os estilos pertencentes ao footer e seus filhos */
+
+/* ================================================================ */
+
+/* MEDIA-QUERIES */
+
+@media only screen and (min-width: 350px){
+    /* Celulares padrões */
+}
+
+@media only screen and (min-width: 450px){
+    /* Tablet */
+}
+
+@media only screen and (min-width: 768px){
+    /* Ipad */
+}
+
+@media only screen and (min-width: 990px){
+    /* Desktop */
+}
+
+/* OBS: PODE COLOCAR MAIS @MEDIA SE NECESSÁRIO */
+
+/* ================================================================ */

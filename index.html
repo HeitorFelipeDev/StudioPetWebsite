@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Pet | A melhor opção para o seu pet</title>
+    <!-- link-css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- link-fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- script-js -->
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- SCROLL-TOP -->
+    <a href="#" id="scroll-top">
+        <i class="fa fa-paw" aria-hidden="true"></i>
+    </a>
+
+    <!-- SECTION-ALERTA-PROMOCAO -->
+    <section id="alerta-promo">
+        <div class="container-promo">
+            <i class="fa fa-x" onclick="closeAlertPromo()" id="close-alert-promo" aria-hidden="true"></i>
+            <img src="assets/images/bg-promo.png" alt="">
+        </div>
+    </section>
+
+    <!-- COOKIES -->
+    <div class="cookies">
+        <p>Nosso site utiliza estatísticas de visitas (cookies) para melhorar sua experiência de navegação. Saiba mais
+            em nosso <a href="#">aviso de privacidade.</a></p>
+        <button onclick="closeCookies()">Aceitar Cookies</button>
+    </div>
+
+    <!-- HEADER-C -->
+    <div class="header-content">
+        <span><i class="fa fa-phone" aria-hidden="true"> (14) 9 9999-9999</i></span>
+        <span><i class="fa-solid fa-location-dot"></i><a
+                href="https://www.google.com.br/maps/place/FATEC+Lins/@-21.698317,-49.7524342,17z/data=!3m1!4b1!4m5!3m4!1s0x94be15ecb135a5dd:0x66b807178c781125!8m2!3d-21.698322!4d-49.7502455"
+                target="_blank"> Fatec Lins-SP</a></span>
+        <span onclick="showFaleConosco()"><i class="fa-brands fa-rocketchat"></i> Fale conosco</span>
+        <span><i class="fa-solid fa-language"></i> pt-br</span>
+    </div>
+
+    <!-- HEADER-C MOBILE -->
+    <div class="header-content-mobile">
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <a href="https://www.google.com.br/maps/place/FATEC+Lins/@-21.698317,-49.7524342,17z/data=!3m1!4b1!4m5!3m4!1s0x94be15ecb135a5dd:0x66b807178c781125!8m2!3d-21.698322!4d-49.7502455"
+            target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+        <i onclick="showFaleConosco()" class="fa fa-envelope" aria-hidden="true"></i>
+    </div>
+
+    <!-- FALE-CONOSCO -->
+    <div class="fale-conosco">
+        <form id="form-fale-conosco">
+            <i class="fa fa-x" id="close-fale-conosco" onclick="closeFaleConosco()" aria-hidden="true"></i>
+            <h3>Mensagem</h3>
+            <div class="input-block">
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" name="email" placeholder="E-mail">
+            </div>
+            <div class="input-block">
+                <input type="text" name="assunto" placeholder="Assunto">
+            </div>
+            <div class="input-block">
+                <textarea cols="30" class="mensagem" rows="10" placeholder="Mensagem..." required=""></textarea>
+            </div>
+            <input type="submit" class="saiba-mais" value="Enviar">
+        </form>
+    </div>
+
+    <!-- HEADER-SECTION -->
+    <header class="header">
+        <!-- Navbar-section -->
+        <nav class="navbar">
+            <!-- search-section -->
+            <!-- Logo-section -->
+            <a href="#" class="logo">
+                <picture>
+                    <img src="assets/images/logo-petshop.png" alt="">
+                </picture>
+            </a>
+            <section class="search-container">
+                <input type="text" name="search" id="search" placeholder="Busque aqui...">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </section>
+            <!-- button-menu-section -->
+            <div class="wrapper-menu" id="button-menu">
+                <div class="line-menu half start"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu half end"></div>
+            </div>
+            <!-- menu-mobile-section -->
+            <section class="menu-mobile">
+                <!-- profile-section -->
+                <section class="profile-section">
+                    <div class="image-profile">
+                        <i class="fa-solid fa-pencil" id="button-editar-perfil"></i>
+                    </div>
+                </section>
+                <span class="nome-user">Olá, User!</span>
+                <button class="button-login" onclick="showLogin()">Entrar</button>
+                <hr>
+                <!-- menu-container -->
+                <ul class="menu-container">
+                    <li class="nav-item">
+                        <a href="#produtos" onclick="closeMenuMobile()" class="nav-link">
+                            Produtos
+                            <i class="fa-solid fa-bone"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#servicos" onclick="closeMenuMobile()" class="nav-link">
+                            Serviços
+                            <i class="fa-solid fa-briefcase"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sobre" onclick="closeMenuMobile()" class="nav-link">
+                            Sobre
+                            <i class="fa-solid fa-paw"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contato" onclick="closeMenuMobile()" class="nav-link">
+                            Contato
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="more-assets">
+                    <li class="nav-item">
+                        <a href="#ajuda" class="nav-link">
+                            Carrinho
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ajuda" class="nav-link">
+                            Ajuda
+                            <i class="fa-solid fa-circle-question"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="border: none;">
+                        <a href="#configuracoes" class="nav-link">
+                            Configurações
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- menu-desktop-section -->
+            <ul class="menu">
+                <li class="nav-item">
+                    <a href="#produtos" class="nav-link">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicos" class="nav-link">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contato" class="nav-link">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ajuda</a>
+                </li>
+                <li class="nav-item config">
+                    <i class="fa-solid fa-gear"></i>
+                    <div class="configuracoes">
+                        <span><i class="fa fa-user" aria-hidden="true"></i> Minha conta</span>
+                        <span><i class="fas fa-dog "></i> Meu pet</span>
+                        <span><i class="fas fa-moon    "></i> Modo escuro</span>
+                    </div>
+                </li>
+                <li class="nav-item cart">
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    <div class="carrinho">
+                        <img src="assets/images/dog-cart.png">
+                        <h3>Seu carrinho está vazio :(</h3>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="button-login" onclick="showLogin()">
+                        Entrar <i class="fa fa-paw" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- LOGIN-SECTION -->
+    <section id="login" class="login-user">
+        <div class="alert-login">
+            <img
+                src="https://i0.wp.com/petcaramelo.com/wp-content/uploads/2021/07/cachorro-triste-doente.png?resize=465%2C309&ssl=1">
+            <h2>Há campos não preenchidos!</h2>
+            <p>Verifique se você não esqueceu de preenche-los</p>
+            <button class="saiba-mais" onclick="closeAlert()">Fechar</button>
+        </div>
+        <i class="fa fa-x" id="button-close-login" onclick="closeLogin()" aria-hidden="true"></i>
+        <div class="login-container">
+            <form id="form-login">
+                <h2> <i class="fas fa-cat"></i> LOGIN</h2>
+                <div class="input-block">
+                    <label>E-mail</label>
+                    <div class="input-container">
+                        <input type="text" name="email" id="email" placeholder="Digite o seu e-mail" required>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="input-block">
+                    <label>Senha</label>
+                    <div class="input-container">
+                        <input onkeypress="showEye()" type="password" name="senha" id="senha"
+                            placeholder="Digite sua senha" required>
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <i class="fa fa-eye" onclick="verSenha(this)" id="eye" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <input type="submit" onclick="validacao()" value="Entrar">
+                <div class="termos">
+                    <input type="checkbox">
+                    <span>Eu li e aceito os <strong>termos</strong> de uso.</span>
+                </div>
+                <span class="cadastro">Não possui uma conta? <strong><a href="cadastro.html"> <br>
+                            Cadastre-se</a></strong></span>
+            </form>
+            <article class="info-login">
+
+            </article>
+        </div>
+    </section>
+
+    <!-- MAIN-SECTION -->
+    <main class="main">
+        <!-- Home-section -->
+        <section id="home">
+            <div class="copy-container">
+                <h1>Seu pet merece o melhor, e o melhor está aqui!</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora vitae aspernatur fuga,
+                    possimus ad aperiam maxime.
+                </p>
+                <button class="saiba-mais">
+                    Saiba mais
+                </button>
+            </div>
+            <div class="image-container">
+                <img src="assets/images/bg-home.png" alt="imagem da promoção">
+            </div>
+        </section>
+
+        <!-- Petes-section -->
+        <section id="pets">
+            <div class="pets-container">
+                <div class="pet">
+                    <img src="https://www.pintarcolorir.com.br/wp-content/uploads/2012/11/cachorro-amigo-do-homem.jpeg">
+                </div>
+                <div class="pet">
+                    <img src="https://www.petz.com.br/blog/wp-content/uploads/2019/06/tamanho-de-gato-1280x720.jpg">
+                </div>
+                <div class="pet">
+                    <img src="https://blog.casadoprodutor.com.br/wp-content/uploads/2017/11/coelho.jpg">
+                </div>
+                <div class="pet">
+                    <img
+                        src="https://s2.glbimg.com/UG8E6w0z5vqc1t2rswlV5lYw45k=/e.glbimg.com/og/ed/f/original/2022/02/22/terrario-hamster-como-montar-o-espaco-perfeito-para-o-meu-pet-vida-de-bicho.png">
+                </div>
+                <div class="pet">
+                    <img src="https://ichef.bbci.co.uk/news/640/cpsprodpb/101BC/production/_97408956_pezgold.jpg">
+                </div>
+                <div class="pet">
+                    <img src="https://oregional.net/wp-content/uploads/2020/05/P%C3%A1ssaros-3.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos-section -->
+        <section id="produtos">
+            <h2 class="title">Ofertas Liquida<strong>cão</strong></h2>
+            <div class="ofertas">
+                <div class="produto-o">
+                    <div class="image-p">
+                        <span class="oferta-relampago">
+                            Oferta <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </span>
+                        <img src="https://cf.shopee.com.br/file/3f9fd2b49402e9ab641c562a207b7912">
+                    </div>
+                    <h2 class="name-p">Ração Pedigree 15kg</h2>
+                    <span class="avaliacoes-p">
+                        1.804
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+                    <span class="valor-p-o">
+                        <del>R$30,00</del>
+                        -
+                        <strong>
+                            R$15,00
+                        </strong>
+                    </span>
+                    <button type="button" class="add-cart">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        ao carrinho
+                    </button>
+                    <button type="button" class="comprar">
+                        Comprar
+                    </button>
+                    <p class="descricao-p">Descrição do produto</p>
+
+                </div>
+                <div class="produto-o">
+                    <div class="image-p">
+                        <span class="oferta-relampago">
+                            Oferta <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </span>
+                        <img
+                            src="https://www.petlove.com.br/images/products/241434/product/Agasalho_Pickorruchos_Puppy_Estampas_Sortidas_1907959_%282%29.jpg?1627784082">
+                    </div>
+                    <h2 class="name-p">Roupa para dog</h2>
+                    <span class="avaliacoes-p">
+                        1.804
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+                    <span class="valor-p-o">
+                        <del>R$30,00</del>
+                        -
+                        <strong>
+                            R$15,00
+                        </strong>
+                    </span>
+                    <button type="button" class="add-cart">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        ao carrinho
+                    </button>
+                    <button type="button" class="comprar">
+                        Comprar
+                    </button>
+                    <p class="descricao-p">Descrição do produto</p>
+
+                </div>
+                <div class="produto-o">
+                    <div class="image-p">
+                        <span class="oferta-relampago">
+                            Oferta <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </span>
+                        <img
+                            src="https://www.petlove.com.br/images/products/236088/product/2642393_Cama_Dupla_Face_Coral_1.jpg?1627757666">
+                    </div>
+                    <h2 class="name-p">Cama para gato</h2>
+                    <span class="avaliacoes-p">
+                        1.804
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+                    <span class="valor-p-o">
+                        <del>R$30,00</del>
+                        -
+                        <strong>
+                            R$15,00
+                        </strong>
+                    </span>
+                    <button type="button" class="add-cart">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        ao carrinho
+                    </button>
+                    <button type="button" class="comprar">
+                        Comprar
+                    </button>
+                    <p class="descricao-p">Descrição do produto</p>
+
+                </div>
+                <div class="produto-o">
+                    <div class="image-p">
+                        <span class="oferta-relampago">
+                            Oferta <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </span>
+                        <img src="https://static.petz.com.br/fotos/20031182000202-1.jpg">
+                    </div>
+                    <h2 class="name-p">Caixa de areia</h2>
+                    <span class="avaliacoes-p">
+                        1.804
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+                    <span class="valor-p-o">
+                        <del>R$30,00</del>
+                        -
+                        <strong>
+                            R$15,00
+                        </strong>
+                    </span>
+                    <button type="button" class="add-cart">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        ao carrinho
+                    </button>
+                    <button type="button" class="comprar">
+                        Comprar
+                    </button>
+                    <p class="descricao-p">Descrição do produto</p>
+
+                </div>
+
+            </div>
+
+            <div class="produtos-content">
+                <div class="categoria">
+                    <h3>Categorias</h3>
+                    <div class="categoria-container">
+                        <ul>
+                            <li class="visited">Banho</li>
+                            <li>Acessórios</li>
+                            <li>Comedouro</li>
+                            <li>Medicamentos</li>
+                            <li>Brinquedos</li>
+                            <li>Rações</li>
+                            <li>Camas</li>
+                            <li>Roupas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="produtos-container">
+                    <div class="navbar-produtos">
+                        <div class="estado-categoria">
+                            Categoria: Banho
+                        </div>
+                        <div class="filtro">
+                            <i class="fa fa-filter" aria-hidden="true"></i>
+                            Filtro
+                        </div>
+                    </div>
+                    <div class="produtos-wrapper">
+                        <div class="produto">
+                            <div class="image-p">
+                                <img
+                                    src="https://www.petlove.com.br/images/products/210620/large/sabonete_Natural.jpeg?1627675361">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                        <div class="produto">
+                            <div class="image-p">
+                                <img
+                                    src="https://cobasi.vteximg.com.br/arquivos/ids/318657/Lenco-Umidecido-Aloe-Vera.jpg?v=637269686068870000">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                        <div class="produto">
+                            <div class="image-p">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_649168-MLB31273570564_062019-O.jpg">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                        <div class="produto">
+                            <div class="image-p">
+                                <img
+                                    src="https://images-americanas.b2w.io/produtos/3278223410/imagens/pente-eletrico-desembolador-de-pelos-gatos-caes-pet-cachorro-western/3278223428_1_large.jpg">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                        <div class="produto">
+                            <div class="image-p">
+                                <img
+                                    src="https://images.tcdn.com.br/img/img_prod/560844/escova_dog_palm_brush_pawise_462_1_20171005162002.jpg">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                        <div class="produto">
+                            <div class="image-p">
+                                <img
+                                    src="https://www.petlove.com.br/images/products/223394/product/12332.jpg?1627715870">
+                            </div>
+                            <h2 class="name-p">Nome produto</h2>
+                            <span class="avaliacoes-p">
+                                1.804
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                            <strong class="valor-p">R$3,50</strong>
+                            <p class="descricao-p">Descrição do produto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Propaganda-section -->
+        <section class="propaganda">
+            <img src="assets/images/propaganda.png" alt="Anúncio Pet Shop">
+        </section>
+
+        <!-- Pacotes-section -->
+        <h2 class="title">Serviços</h2>
+        <section id="pacotes">
+            <div class="pacotes-container">
+                <div class="pacote">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="pacote-info">
+                        <strong>Receba em horas</strong>
+                        <span>Saiba mais</span>
+                    </div>
+                </div>
+                <div class="pacote">
+                    <i class="fa-solid fa-truck"></i>
+                    <div class="pacote-info">
+                        <strong>Frete grátis brasil</strong>
+                        <span>Saiba mais</span>
+                    </div>
+                </div>
+                <div class="pacote">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <div class="pacote-info">
+                        <strong>Até 10x sem juros</strong>
+                        <span>Saiba mais</span>
+                    </div>
+                </div>
+                <div class="pacote">
+                    <i class="fa-solid fa-store"></i>
+                    <div class="pacote-info">
+                        <strong>Retire ou troque na loja</strong>
+                        <span>Saiba mais</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços-section -->
+        <section id="servicos">
+            <div class="servicos-container">
+                <div class="servico">
+                    <img src="assets/images/m-1.png">
+                    <h3>Banho</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam, laborum, illum
+                        explicabo omnis quasi aliquam nemo obcaecati amet at architecto aliquid veritatis cumque maiores
+                        error excepturi. Ab, totam culpa.
+                    </p>
+                </div>
+                <div class="servico">
+                    <img src="assets/images/m-4.png">
+                    <h3>Tosa</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam, laborum, illum
+                        explicabo omnis quasi aliquam nemo obcaecati amet at architecto aliquid veritatis cumque maiores
+                        error excepturi. Ab, totam culpa.
+                    </p>
+                </div>
+                <div class="servico">
+                    <img src="assets/images/m-2.png">
+                    <h3>Consultas</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam, laborum, illum
+                        explicabo omnis quasi aliquam nemo obcaecati amet at architecto aliquid veritatis cumque maiores
+                        error excepturi. Ab, totam culpa.
+                    </p>
+                </div>
+                <div class="servico">
+                    <img src="assets/images/m-3.png">
+                    <h3>Produtos</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam laboriosam, laborum, illum
+                        explicabo omnis quasi aliquam nemo obcaecati amet at architecto aliquid veritatis cumque maiores
+                        error excepturi. Ab, totam culpa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre-section -->
+        <section id="sobre">
+            <h2 class="title">Sobre</h2>
+            <div class="sobre-container">
+                <div class="sobre-image">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/8126zpdWfjL.png" alt="">
+                </div>
+                <div class="sobre-info">
+                    <h2>Studio Pet</h2>
+                    <h3>A melhor opção para o seu pet.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit qui magni quisquam architecto magnam accusantium perspiciatis ipsam iure minus, nam beatae molestiae minima quod, aut repudiandae ipsum sint debitis sit.</p>
+                    <button class="saiba-mais">Saiba mais</button>
+                </div>
+            </div>
+            <div class="sobre-buttons">
+                <button class="btn-s">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    Marcar consulta
+                </button>
+                <button class="btn-s">
+                    <i class="fa-solid fa-user-group"></i>
+                    Convidar amigos
+                </button>
+                <button class="btn-s">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Cadastrar-se
+                </button>
+            </div>
+        </section>
+
+        <!-- Contato-section -->
+        <section id="contato">
+            <h2 class="title">Contato</h2>
+            <div class="contato-container">
+                <div class="contato">
+                    <h3>Entrar em contato</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="contatos">
+                        <div class="contato-wrapper">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <div>
+                                <h3>Nome</h3>
+                                <span>Prof° Honorato</span>
+                            </div>
+                        </div>
+                        <div class="contato-wrapper">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <h3>E-mail</h3>
+                                <span>studiopet@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contato-wrapper">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <h3>Localização</h3>
+                                <span>Fatec - Lins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="form-contato">
+                    <h3>Mensagem</h3>
+                    <div class="input-block">
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="input-block">
+                        <input type="text" name="assunto" placeholder="Assunto">
+                    </div>
+                    <div class="input-block">
+                        <textarea cols="30" class="mensagem" rows="10" placeholder="Mensagem..." required=""></textarea>
+                    </div>
+                    <input type="submit" class="saiba-mais" value="Enviar">
+                </form>
+            </div>
+        </section>
+    </main>
+    <img id="img-footer" src="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Cat-PNG.png" alt="">
+    <!-- FOOTER-SECTION -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="col-f pagamento">
+                <h3>Formas de pagamento</h3>
+                <div class="formas-p">
+                    <div class="pag">
+                        <img src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-1.png" alt="visa-logo-1">
+                    </div>
+                    <div class="pag">
+                        <img src="https://marcas-logos.net/wp-content/uploads/2020/03/Mastercard-Logo-1.png" alt="mastercard">
+                    </div>
+                    <div class="pag">
+                        <img src="https://placadetran.com.br/wp-content/uploads/2021/02/Imagem-Boleto-Bancario-PNG.png" alt="mastercard">
+                    </div>
+                    <div class="pag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Elo_logo.png/220px-Elo_logo.png" alt="mastercard">
+                    </div>
+                </div>
+                <h3>Nossas Mídias Sociais</h3>
+                <div class="midias-s">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            <div class="col-f">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>
+                        <a href="#sobre">Quem somos</a>
+                    </li>
+                    <li>
+                        <a href="#">Nossas lojas</a>
+                    </li>
+                    <li>
+                        <a href="#">Prazos de entrega</a>
+                    </li>
+                    <li>
+                        <a href="#">Fale conosco</a>
+                    </li>
+                    <li>
+                        <a href="#">Formas de pagamento</a>
+                    </li>
+                    <li>
+                        <a href="#">Como comprar</a>
+                    </li>
+                    <li>
+                        <a href="#">Trocas e devoluções</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-f">
+                <h3>Nossos serviços</h3>
+                <ul>
+                    <li>
+                        <a href="#">Banho e tosa</a>
+                    </li>
+                    <li>
+                        <a href="#">Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#">Assinatura StudioPet</a>
+                    </li>
+                    <li>
+                        <a href="#">Veterinário</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-f">
+                <h3>Tudo para cães</h3>
+                <ul>
+                    <li>
+                        <a href="#">Ração para cachorro</a>
+                    </li>
+                    <li>
+                        <a href="#">Petiscos para cachorro</a>
+                    </li>
+                    <li>
+                        <a href="#">Tapete higiênico</a>
+                    </li>
+                    <li>
+                        <a href="#">Coleira para cachorro</a>
+                    </li>
+                    <li>
+                        <a href="#">Comedouro para cachorro</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-f">
+                <h3>Tudo para gatos</h3>
+                <ul>
+                    <li>
+                        <a href="#">Ração para gatos</a>
+                    </li>
+                    <li>
+                        <a href="#">Areia para gatos</a>
+                    </li>
+                    <li>
+                        <a href="#">Caixa de areia</a>
+                    </li>
+                    <li>
+                        <a href="#">Fonte de água</a>
+                    </li>
+                    <li>
+                        <a href="#">Bebedouro para gatos</a>
+                    </li>
+                    <li>
+                        <a href="#">Arranhador para gatos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-about">
+            <p>Studio Pet 2022 - <i class="fa fa-copyright" aria-hidden="true"></i> Copyright | Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-creditos">
+            <p>Desenvolvido com <i class="fa fa-heart" aria-hidden="true"></i> por Heitor Felipe :)</p>
+        </div>
+    </footer>
+</body>
+
+</html>
